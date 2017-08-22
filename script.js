@@ -59,7 +59,24 @@ function hero2(){
 
 }
 
+function arrayString1(){
+	var array1 = ["text1", "text2", "text3"];
+	for( i=0; array1.length; i++){
+		console.log(array1[i]);
+	}
+	array1.push("new Text bitch");
 
+	for( i=0; array1.length; i++){
+		console.log(array1[i]);
+	}
+}
+
+function concatString(){
+	var string1 ="blik";
+	var number1 = 1;
+	string1 = string1 +1;
+	console.log(string1);
+}
 
 function functions1(p1) {
     return p1*p1;              
