@@ -44,6 +44,21 @@ var myArray = [myh1, myh2, myh3]; //array to hold hero text crap
 }
 
 
+function hero2(){
+	// set json url and maek a request object
+	var requestURL2 = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+	var request2 = new XMLHttpRequest();
+	//send a get request to fill object with json file data
+	request2.open('GET', requestURL);
+	request2.responseType = 'json';
+	request2.send();
+	// run this function when you get a response
+	request2.onload = function() {
+	var requestData2 = request.response;
+	}
+
+}
+
 
 
 function functions1(p1) {
