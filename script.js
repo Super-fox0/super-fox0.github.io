@@ -31,23 +31,24 @@ function functions4() {
 }
 
 function makeParagraph(){
-	var para = document.createElement("P")
-	var text = document.createTextNode("text for paragraph");
-	para.setAttribute("id", "p1");
-	para.appendChild(text);
-	document.body.appendChild(para);
+	var para = document.createElement("P") //make p tag
+	var text = document.createTextNode("text for paragraph"); //text holder
+	para.setAttribute("id", "p1"); // set p id
+	para.appendChild(text); // set p text
+	document.body.appendChild(para); // add to body
 }
 
-function getText(){
+function changeText(){
 	var textBox = document.getElementById("textArea"); //get text box
 	var textholder = document.createTextNode(textBox.value); // get text from text box
 	var para = document.getElementById("p1"); //get paragraph
+	para.innerHTML = "";
 	para.appendChild(textholder); //write to paragraph
 	document.body.appendChild(para); //print paragraph
 	document.get
 }
 
 function removePara(){
-	var para1 = document.getElementById("p1")
-	para1.parentNode.removeChild(para1);
+	var para1 = document.getElementById("p1") //get p element
+	para1.parentNode.removeChild(para1); // remove p element
 }
