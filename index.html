@@ -5,11 +5,9 @@
     <title>Title1</title>
     <script type="text/javascript" src="script.js"></script>
 </head>
-
 <body>
 
 <button onclick="functions3()"> increase Age</button>
-
 
 <div id="form1">
     First name: <input type="text" name="fname"> </br>
@@ -17,16 +15,35 @@
     Occupation <input type="text" name="occu"> </br>
     <button value="Submit1" onclick="functions4()">submit</button>
 </div>
-
 </br>
 
 <textarea id="textArea" rows="3" cols="20">
 text area 12345
 </textarea>
 
+<button onclick="convertToUpper()">convert to upper</button>
+
 <button onclick="makeParagraph()">Make para</button>
 <button onclick="changeText()">change para</button>
 <button onclick="removePara()">remove para</button>
+
+<table border="1">
+    <tr>
+        <th id="squadname">Squad Name</th>
+        <th id="homeTown">Home Town</th>
+        <th id=formed>Formed</th>
+        <th id=secretbase>Secret Base</th>
+        <th id=active>Active</th>
+    </tr>
+    <tr>
+        <td id="sn1"></td>
+        <td id="ht1"></td>
+        <td id="f1"></td>
+        <td id="sb1"></td>
+        <td id="a1"></td>
+    </tr>
+</table>
+<button onclick="heroTable()">fill table</button>
 
 </body>
 </html>

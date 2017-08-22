@@ -1,3 +1,24 @@
+
+function heroTable(){
+// set json url and maek a request object
+var requestURL = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+var request = new XMLHttpRequest();
+//send a get request to fill object with json file data
+request.open('GET', requestURL);
+request.responseType = 'json';
+request.send();
+// run this function when you get a response
+request.onload = function() {
+var requestData = request.response;
+//write out squad details
+document.getElementById('sn1').innerHTML=(requestData['squadName']);
+document.getElementById('ht1').innerHTML=(requestData['homeTown']);
+document.getElementById('f1').innerHTML=(requestData['formed']);
+document.getElementById('sb1').innerHTML=(requestData['secretBase']);
+document.getElementById('a1').innerHTML=(requestData['active']);
+}
+}
+
 function functions1(p1) {
     return p1*p1;              
 }
@@ -52,3 +73,12 @@ function removePara(){
 	var para1 = document.getElementById("p1") //get p element
 	para1.parentNode.removeChild(para1); // remove p element
 }
+
+function convertToUpper(){
+	var string = "He said \"My name is Elliot\"";
+	console.log(string);
+	string = string.toUpperCase(); 
+	console.log(string);
+}
+
+
