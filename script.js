@@ -10,14 +10,41 @@ request.send();
 // run this function when you get a response
 request.onload = function() {
 var requestData = request.response;
-//write out squad details
+//write out squad details to some shitty table
 document.getElementById('sn1').innerHTML=(requestData['squadName']);
 document.getElementById('ht1').innerHTML=(requestData['homeTown']);
 document.getElementById('f1').innerHTML=(requestData['formed']);
 document.getElementById('sb1').innerHTML=(requestData['secretBase']);
 document.getElementById('a1').innerHTML=(requestData['active']);
+// make some variables to hold each hero - shit way to do it
+var myh1 = document.createElement('h3');
+var myh2 = document.createElement('h3');
+var myh3 = document.createElement('h3');
+var z=0; //number for changing myArray index
+
+var myArray = [myh1, myh2, myh3]; //array to hold hero text crap
+	var heroHolder = requestData.members.length; //gets the number of heroes
+	for( i=0; i< heroHolder; i++){
+		// interate through heroes and write out attributes
+		myArray[z].textContent = requestData.members[i].name;
+		myArray[z].textContent = myArray[z].textContent + " " +requestData.members[i].age + " ";
+		myArray[z].textContent = myArray[z].textContent + " " +requestData.members[i].secretIdentity;
+	
+		//get powers and add to bottom of attributes
+		var powerHolder = requestData.members[i].powers.length;
+		for(x = 0; x< powerHolder; x++){
+			myArray[z].textContent = myArray[z].textContent + " | " +requestData.members[i].powers[x] + " | ";
+		}
+		document.getElementsByTagName('body')[0].appendChild(myArray[z]); //write to webpage
+		z++; //increment myArray index to cycle the next hero
+		}
+	}
+
+
 }
-}
+
+
+
 
 function functions1(p1) {
     return p1*p1;              
