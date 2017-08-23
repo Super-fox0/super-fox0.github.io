@@ -25,7 +25,7 @@ function heroTable() {
 
 		var myArray = [myh1, myh2, myh3]; //array to hold hero text crap
 		var heroHolder = requestData.members.length; //gets the number of heroes
-		for (i = 0; i < heroHolder; i++) {
+		for (var i = 0; i < heroHolder; i++) {
 			// interate through heroes and write out attributes
 			myArray[z].textContent = requestData.members[i].name;
 			myArray[z].textContent = myArray[z].textContent + " " + requestData.members[i].age + " ";
@@ -33,7 +33,7 @@ function heroTable() {
 
 			//get powers and add to bottom of attributes
 			var powerHolder = requestData.members[i].powers.length;
-			for (x = 0; x < powerHolder; x++) {
+			for (var x = 0; x < powerHolder; x++) {
 				myArray[z].textContent = myArray[z].textContent + " | " + requestData.members[i].powers[x] + " | ";
 			}
 			document.getElementsByTagName('body')[0].appendChild(myArray[z]); //write to webpage
@@ -44,18 +44,53 @@ function heroTable() {
 
 }
 
-
-function hero2() {
+function kings(x) {
+	//var x = "Cnut";
 	// set json url and maek a request object
-	var requestURL2 = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/example.json';
+	var requestURL2 = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
 	var request2 = new XMLHttpRequest();
 	//send a get request to fill object with json file data
-	request2.open('GET', requestURL);
+	request2.open('GET', requestURL2);
 	request2.responseType = 'json';
 	request2.send();
 	// run this function when you get a response
 	request2.onload = function () {
-		var requestData2 = request.response;
+		var requestData2 = request2.response; //get the data in here
+
+		var h11 = document.createElement('h1'); //create element
+		h11.setAttribute('style', 'white-space: pre;');
+		var kingNumber = requestData2.length; //get length of king array
+		console.log(kingNumber);
+
+		var stringBuilder= "";
+
+		for (var i = 0; i<kingNumber; i++) { //iterate through all kings
+            if (x === requestData2[i].nm) { //compare x with name
+				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+			}
+
+			if (x === requestData2[i].cty) { //compare x with name
+				//h11.textContent = stringBuilder;
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+				//document.getElementsByTagName('body')[0].appendChild(h11); 
+			}
+
+			if (x === requestData2[i].hse) { //compare x with name
+				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+			}
+
+			if (x === requestData2[i].yrs) { //compare x with name
+				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+			}
+			h11.textContent = stringBuilder;
+			console.log(h11);
+			console.log(stringBuilder)
+			document.getElementsByTagName('body')[0].appendChild(h11); //string builder issue
+        }
+
 	}
 
 }
@@ -95,12 +130,9 @@ function functions2(p1, p2, p3) {
 // Functions test
 console.log(functions1(3));
 console.log(functions2(1, 2, 3));
-var person = {
-	name: "John",
-	age: 50,
-	occupation: "builder"
-};
+var person = {name: "John", age: 50, occupation: "builder"};
 console.log(person.name, person.age, person.occupation);
+
 person.name = "joe";
 person.age = 21;
 person.occupation = "bricklayer";
@@ -111,10 +143,12 @@ function functions3() {
 	console.log(person.name, person.age, person.occupation);
 }
 
+
 function functions4() {
-	var firstName = document.getElementById("form1").elements['fname'].value;
-	var lastName = document.getElementById("form1").elements['lname'].value;
-	var occupation = document.getElementById("form1").elements['occu'].value;
+	// console.log(document.getElementById("form1").childNodes.find((a)=> a.name === "fname"));
+	var firstName = document.getElementsByName("fname")[0].value;
+	var lastName = document.getElementsByName("lname")[0].value;
+	var occupation = document.getElementsByName("occu")[0].value;
 
 	var personx = {
 		n: firstName,
@@ -143,7 +177,7 @@ function changeText() {
 }
 
 function removePara() {
-	var para1 = document.getElementById("p1") //get p element
+	var para1 = document.getElementById("p1"); //get p element
 	para1.parentNode.removeChild(para1); // remove p element
 }
 
@@ -228,6 +262,13 @@ function iteration4(num) {
 	}
 }
 
-function strings4() {
-
+function string4(s1) {
+    var x = s1;
+    var counter = 0;
+    for (i = 0; i < x.length - 2; i++) {
+        if (x.charAt(i) === x.charAt(i + 1) && x.charAt(i) === x.charAt(i + 2)) {
+            counter++;
+        }
+    }
+    console.log(counter);
 }
