@@ -3,9 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <title>Garage</title>
-    <script type="text/javascript" src="garage.js"></script>
+    
   </head>
   <body>
-  test
+
+        Car Make <input type="text" id="make"> </br>
+        Car Reg <input type="text" id="reg"> </br>
+        <input type="checkbox" value="50" id="tyreCheck"> Check Tyres</br>
+        <input type="checkbox" value="100" id="windscreen"> Replace Windscreen</br>
+        <input type="checkbox" value="500" id="respray"> Respray Vehicle</br>
+    
+
+        <button onclick="makeCar()">Make Car</button> </br>
+
+        <button onclick="removeCar()">Remove Last Added Car</button>
+        <button onclick="printCarArray()">print car array</button>
+    
+
+
+
   </body>
+  <script type="text/javascript" src="garage.js"></script>
 </html>
