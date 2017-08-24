@@ -44,7 +44,7 @@ function heroTable() {
 
 }
 
-function kings(x) {
+function kings() {
 	//var x = "Cnut";
 	// set json url and maek a request object
 	var requestURL2 = 'https://raw.githubusercontent.com/ewomackQA/JSONDataRepo/master/kings.json';
@@ -60,39 +60,42 @@ function kings(x) {
 		var h11 = document.createElement('h1'); //create element
 		h11.setAttribute('style', 'white-space: pre;');
 		var kingNumber = requestData2.length; //get length of king array
-		console.log(kingNumber);
 
+
+		//console.log(kingNumber);
+		var x = document.getElementById("kingBox").value;
+		console.log(x);
+	//	console.log(requestData2[0].hse.includes(stringHolder));
 		var stringBuilder= "";
 
 		for (var i = 0; i<kingNumber; i++) { //iterate through all kings
-            if (x === requestData2[i].nm) { //compare x with name
+            if (requestData2[i].nm.includes(x)) { //compare x with name
 				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
 				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+				//console.log(stringBuilder);
 			}
 
-			if (x === requestData2[i].cty) { //compare x with name
+			if (requestData2[i].cty.includes(x)) { //compare x with name
 				//h11.textContent = stringBuilder;
 				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
 				//document.getElementsByTagName('body')[0].appendChild(h11); 
 			}
-
-			if (x === requestData2[i].hse) { //compare x with name
+			//if (x === requestData2[i].hse)
+			if (requestData2[i].hse.includes(x)) { //compare x with name
 				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
 				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
 			}
 
-			if (x === requestData2[i].yrs) { //compare x with name
+			if (requestData2[i].yrs.includes(x)) { //compare x with name
 				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
 				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
 			}
 			h11.textContent = stringBuilder;
-			console.log(h11);
+			//console.log(h11);
 			console.log(stringBuilder)
 			document.getElementsByTagName('body')[0].appendChild(h11); //string builder issue
         }
-
 	}
-
 }
 
 function arrayString1() {
