@@ -8,31 +8,44 @@
 let carArray = [];
 
 
-function makeCar(){
-	let car = {make: document.getElementById("make").value, reg:document.getElementById("reg").value, cost:0};
-	
-	if(document.getElementById("tyreCheck").checked){
+function makeCar() {
+	let car = {
+		make: document.getElementById("make").value,
+		reg: document.getElementById("reg").value,
+		cost: 0
+	};
+
+	if (document.getElementById("tyreCheck").checked) {
 		car.cost = Number(car.cost) + Number(document.getElementById("tyreCheck").value);
 	}
-	if(document.getElementById("windscreen").checked){
+	if (document.getElementById("windscreen").checked) {
 		car.cost = Number(car.cost) + Number(document.getElementById("windscreen").value);
 	}
-	if(document.getElementById("respray").checked){
+	if (document.getElementById("respray").checked) {
 		car.cost = Number(car.cost) + Number(document.getElementById("respray").value);
 	}
 	console.log(car.make, car.reg, car.cost);
 	carArray.push(car);
 }
 
-function removeCar(){
+function removeCar() {
 	carArray.splice(-1, 1);
 	console.log("Car Removed");
 }
 
-function printCarArray(){
-	for(let i =0; i< carArray.length; i++){
+function removeCarByReg() {
+	for (let i = 0; i < carArray.length; i++) {
+		if (carArray[i].reg === document.getElementById("removeReg").value) {
+			carArray.splice(i, 1);
+			console.log("Car Removed by Reg")
+		}
+	}
+}
+
+function printCarArray() {
+	for (let i = 0; i < carArray.length; i++) {
 		console.log(carArray[i].make, carArray[i].reg, carArray[i].cost);
 	}
-	
+
 
 }
