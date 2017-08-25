@@ -65,36 +65,36 @@ function kings() {
 		//console.log(kingNumber);
 		var x = document.getElementById("kingBox").value;
 		console.log(x);
-	//	console.log(requestData2[0].hse.includes(stringHolder));
-		var stringBuilder= "";
+		//	console.log(requestData2[0].hse.includes(stringHolder));
+		var stringBuilder = "";
 
-		for (var i = 0; i<kingNumber; i++) { //iterate through all kings
-            if (requestData2[i].nm.includes(x)) { //compare x with name
+		for (var i = 0; i < kingNumber; i++) { //iterate through all kings
+			if (requestData2[i].nm.includes(x)) { //compare x with name
 				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
-				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n";
 				//console.log(stringBuilder);
 			}
 
 			if (requestData2[i].cty.includes(x)) { //compare x with name
 				//h11.textContent = stringBuilder;
-				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n";
 				//document.getElementsByTagName('body')[0].appendChild(h11); 
 			}
 			//if (x === requestData2[i].hse)
 			if (requestData2[i].hse.includes(x)) { //compare x with name
 				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
-				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n";
 			}
 
 			if (requestData2[i].yrs.includes(x)) { //compare x with name
 				//h11.textContent =JSON.stringify(requestData2[i], null, 2);
-				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n" ; 
+				stringBuilder = stringBuilder + " " + JSON.stringify(requestData2[i], null, 2) + "\r\n";
 			}
 			h11.textContent = stringBuilder;
 			//console.log(h11);
 			console.log(stringBuilder)
 			document.getElementsByTagName('body')[0].appendChild(h11); //string builder issue
-        }
+		}
 	}
 }
 
@@ -133,7 +133,11 @@ function functions2(p1, p2, p3) {
 // Functions test
 console.log(functions1(3));
 console.log(functions2(1, 2, 3));
-var person = {name: "John", age: 50, occupation: "builder"};
+var person = {
+	name: "John",
+	age: 50,
+	occupation: "builder"
+};
 console.log(person.name, person.age, person.occupation);
 
 person.name = "joe";
@@ -240,7 +244,7 @@ function iteration4(num) {
 	var neg1 = num;
 
 	while (original != 1) {
-		
+
 		if ((original % 3) === 0) // check if orig divisible by 3
 		{
 			original = original / 3;
@@ -266,12 +270,12 @@ function iteration4(num) {
 }
 
 function string4(s1) {
-    var x = s1;
-    var counter = 0;
-    for (i = 0; i < x.length - 2; i++) {
-        if (x.charAt(i) === x.charAt(i + 1) && x.charAt(i) === x.charAt(i + 2)) {
-            counter++;
-        }
-    }
-    console.log(counter);
+	var x = s1;
+	var counter = 0;
+	for (i = 0; i < x.length - 2; i++) {
+		if (x.charAt(i) === x.charAt(i + 1) && x.charAt(i) === x.charAt(i + 2)) {
+			counter++;
+		}
+	}
+	console.log(counter);
 }
